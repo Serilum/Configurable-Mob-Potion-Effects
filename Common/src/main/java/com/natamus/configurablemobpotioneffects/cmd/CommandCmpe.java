@@ -1,7 +1,7 @@
 package com.natamus.configurablemobpotioneffects.cmd;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.natamus.collective.functions.StringFunctions;
+import com.natamus.collective.functions.MessageFunctions;
 import com.natamus.configurablemobpotioneffects.util.Util;
 
 import net.minecraft.commands.CommandSourceStack;
@@ -14,9 +14,9 @@ public class CommandCmpe {
 			.executes((command) -> {
 				CommandSourceStack source = command.getSource();
 				
-				StringFunctions.sendMessage(source, "Usage:", ChatFormatting.DARK_GREEN);
-				StringFunctions.sendMessage(source, " /cmpe reload", ChatFormatting.YELLOW);
-				StringFunctions.sendMessage(source, "  Reloads the config files located in ./config/configurablemobpotioneffects/", ChatFormatting.DARK_GRAY);
+				MessageFunctions.sendMessage(source, "Usage:", ChatFormatting.DARK_GREEN);
+				MessageFunctions.sendMessage(source, " /cmpe reload", ChatFormatting.YELLOW);
+				MessageFunctions.sendMessage(source, "  Reloads the config files located in ./config/configurablemobpotioneffects/", ChatFormatting.DARK_GRAY);
 				return 1;
 			})
 			.then(Commands.literal("reload")
@@ -26,12 +26,12 @@ public class CommandCmpe {
 				try {
 					Util.loadMobConfigFile();
 				} catch (Exception ex) {
-					StringFunctions.sendMessage(source, "Something went wrong while reloading the config file.", ChatFormatting.RED);
+					MessageFunctions.sendMessage(source, "Something went wrong while reloading the config file.", ChatFormatting.RED);
 					ex.printStackTrace();
 					return 0;
 				}
 				
-				StringFunctions.sendMessage(source, "Successfully loaded the mob potion effect config files.", ChatFormatting.DARK_GREEN);
+				MessageFunctions.sendMessage(source, "Successfully loaded the mob potion effect config files.", ChatFormatting.DARK_GREEN);
 				return 1;
 			}))
 		);
