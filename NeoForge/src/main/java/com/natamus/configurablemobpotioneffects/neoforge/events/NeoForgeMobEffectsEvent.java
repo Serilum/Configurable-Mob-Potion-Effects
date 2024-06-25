@@ -3,11 +3,11 @@ package com.natamus.configurablemobpotioneffects.neoforge.events;
 import com.natamus.configurablemobpotioneffects.cmd.CommandCmpe;
 import com.natamus.configurablemobpotioneffects.events.MobEffectsEvent;
 import net.minecraft.world.entity.LivingEntity;
-import net.neoforged.neoforge.event.RegisterCommandsEvent;
-import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
-import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 @EventBusSubscriber
 public class NeoForgeMobEffectsEvent {
@@ -22,8 +22,8 @@ public class NeoForgeMobEffectsEvent {
 	}
 	
 	@SubscribeEvent
-	public static void onEntityDamage(LivingHurtEvent e) {
+	public static void onEntityDamage(LivingDamageEvent.Post e) {
 		LivingEntity livingEntity = e.getEntity();
-		MobEffectsEvent.onEntityDamage(livingEntity.level(), livingEntity, e.getSource(), e.getAmount());
+		MobEffectsEvent.onEntityDamage(livingEntity.level(), livingEntity, e.getSource(), e.getNewDamage());
 	}
 }
