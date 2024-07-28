@@ -1,6 +1,7 @@
 package com.natamus.configurablemobpotioneffects;
 
 import com.natamus.collective.check.RegisterMod;
+import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.configurablemobpotioneffects.neoforge.events.NeoForgeMobEffectsEvent;
 import com.natamus.configurablemobpotioneffects.util.Reference;
 import com.natamus.configurablemobpotioneffects.util.Util;
@@ -14,6 +15,10 @@ import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
 public class ModNeoForge {
 	
 	public ModNeoForge(IEventBus modEventBus) {
+		if (!ShouldLoadCheck.shouldLoad(Reference.MOD_ID)) {
+			return;
+		}
+
 		modEventBus.addListener(this::loadComplete);
 
 		setGlobalConstants();
