@@ -1,6 +1,7 @@
 package com.natamus.configurablemobpotioneffects;
 
 import com.natamus.collective.check.RegisterMod;
+import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.collective.fabric.callbacks.CollectiveEntityEvents;
 import com.natamus.configurablemobpotioneffects.cmd.CommandCmpe;
 import com.natamus.configurablemobpotioneffects.events.MobEffectsEvent;
@@ -18,6 +19,10 @@ public class ModFabric implements ModInitializer {
 	
 	@Override
 	public void onInitialize() {
+		if (!ShouldLoadCheck.shouldLoad(Reference.MOD_ID)) {
+			return;
+		}
+
 		setGlobalConstants();
 		ModCommon.init();
 
