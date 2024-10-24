@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "configurablemobpotioneffects",
+  "version": "3.5",
+
+  "name": "Configurable Mob Potion Effects",
+  "description": "Configurably set potion effects for all living entities, permanent for self and on damage for others.",
+  "authors": [ "Rick South" ],
+  "contact": {
+    "homepage": "https://serilum.com/mod/configurable-mob-potion-effects",
+    "sources": "https://github.com/Serilum/Configurable-Mob-Potion-Effects",
+    "issues": "https://github.com/Serilum/.issue-tracker/labels/Mod:%20Configurable%20Mob%20Potion%20Effects"
+  },
+
+  "license": "All Right Reserved",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": { "main": [ "com.natamus.configurablemobpotioneffects.ModFabric" ] },
+
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric": "*",
+    "minecraft": ">=1.21",
+    "java": ">=21",
+    "collective": ">=7.88"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "Donate <3" : "https://ricksouth.com/donate"
+      }
+    }
+  },
+
+  "contributors": [
+	  " ",
+	  "Thank you very much to my Membership sponsors for supporting the development of this mod!",
+	  " ",
+	  "If you would like to contribute too, check out https://serilum.com/donate.",
+	  " ",
+	  "Membership sponsors:",
+	  " Alister",
+	  " Andrean Olgo",
+	  " aternosorg",
+	  " Cherriesaurus",
+	  " kate1073",
+	  " Michael W. S.",
+	  " Tyler Behl",
+	  " XAgent"
+  ]
+}
