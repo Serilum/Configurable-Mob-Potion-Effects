@@ -5,7 +5,6 @@ import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.configurablemobpotioneffects.forge.events.ForgeMobEffectsEvent;
 import com.natamus.configurablemobpotioneffects.util.Reference;
 import com.natamus.configurablemobpotioneffects.util.Util;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
