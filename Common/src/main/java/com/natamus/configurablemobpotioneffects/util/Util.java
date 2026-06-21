@@ -26,12 +26,12 @@ public class Util {
 	private static final File permanentfile = new File(dirpath + File.separator + "permanenteffects.txt");
 	private static final File damagefile = new File(dirpath + File.separator + "ondamageeffects.txt");
 	
-	public static HashMap<EntityType<?>, CopyOnWriteArrayList<MobEffectInstance>> mobpermanent = new HashMap<EntityType<?>, CopyOnWriteArrayList<MobEffectInstance>>();
-	public static HashMap<EntityType<?>, CopyOnWriteArrayList<MobEffectInstance>> mobdamage = new HashMap<EntityType<?>, CopyOnWriteArrayList<MobEffectInstance>>();
+	public static HashMap<EntityType<?>, CopyOnWriteArrayList<MobEffectInstance>> mobpermanent = new HashMap<>();
+	public static HashMap<EntityType<?>, CopyOnWriteArrayList<MobEffectInstance>> mobdamage = new HashMap<>();
 	
 	public static void loadMobConfigFile() throws IOException {
-		mobpermanent = new HashMap<EntityType<?>, CopyOnWriteArrayList<MobEffectInstance>>();
-		mobdamage = new HashMap<EntityType<?>, CopyOnWriteArrayList<MobEffectInstance>>();
+		mobpermanent = new HashMap<>();
+		mobdamage = new HashMap<>();
 		
 		PrintWriter permanentwriter = null;
 		PrintWriter damagewriter = null;
@@ -111,10 +111,10 @@ public class Util {
 			}
 		}
 		
-		List<String> sortedpotions = new ArrayList<String>();
-		List<String> sortedentities = new ArrayList<String>();
-		HashMap<String, MobEffect> phm = new HashMap<String, MobEffect>();
-		HashMap<String, EntityType<?>> ehm = new HashMap<String, EntityType<?>>();
+		List<String> sortedpotions = new ArrayList<>();
+		List<String> sortedentities = new ArrayList<>();
+		HashMap<String, MobEffect> phm = new HashMap<>();
+		HashMap<String, EntityType<?>> ehm = new HashMap<>();
 		
 		StringBuilder emptypermanenteffects = new StringBuilder();
 		StringBuilder emptydamageeffects = new StringBuilder();
@@ -155,10 +155,10 @@ public class Util {
 			for (String effectstring : sortedpotions) {
 				MobEffect effect = phm.get(effectstring);
 				
-				if (!emptypermanenteffects.toString().equals("")) {
+				if (!emptypermanenteffects.toString().isEmpty()) {
 					emptypermanenteffects.append("|");
 				}
-				if (!emptydamageeffects.toString().equals("")) {
+				if (!emptydamageeffects.toString().isEmpty()) {
 					emptydamageeffects.append("|");
 				}
 				
@@ -179,7 +179,7 @@ public class Util {
 					Identifier rl = BuiltInRegistries.ENTITY_TYPE.getKey(entitytype);
 					permanentwriter.println("'" + rl + "'" + " : '" + emptypermanenteffects + "'," + "\n");
 					
-					mobpermanent.put(entitytype, new CopyOnWriteArrayList<MobEffectInstance>());
+					mobpermanent.put(entitytype, new CopyOnWriteArrayList<>());
 				}
 			}
 			
@@ -196,7 +196,7 @@ public class Util {
 					Identifier rl = BuiltInRegistries.ENTITY_TYPE.getKey(entitytype);
 					damagewriter.println("'" + rl + "'" + " : '" + emptydamageeffects + "'," + "\n");
 					
-					mobdamage.put(entitytype, new CopyOnWriteArrayList<MobEffectInstance>());
+					mobdamage.put(entitytype, new CopyOnWriteArrayList<>());
 				}
 			}
 			
@@ -210,7 +210,7 @@ public class Util {
 	}
 	
 	private static CopyOnWriteArrayList<MobEffectInstance> parseEffectString(String effectstring) {
-		CopyOnWriteArrayList<MobEffectInstance> effectinstances = new CopyOnWriteArrayList<MobEffectInstance>();
+		CopyOnWriteArrayList<MobEffectInstance> effectinstances = new CopyOnWriteArrayList<>();
 		
 		for (String effectpair : effectstring.split(StringFunctions.escapeSpecialRegexChars("|"))) {
 			String[] epspl = effectpair.split(",");
@@ -233,11 +233,11 @@ public class Util {
 				}
 			}
 			
-			if (effectrlstring.equals("") || lvlstring.equals("")) {
+			if (effectrlstring.isEmpty() || lvlstring.isEmpty()) {
 				continue;
 			}
 			
-			if (durationstring.equals("")) {
+			if (durationstring.isEmpty()) {
 				durationstring = "0";
 			}
 			

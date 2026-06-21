@@ -22,6 +22,6 @@ public class NeoForgeMobEffectsEvent {
 	@SubscribeEvent
 	public static void onEntityDamage(LivingDamageEvent.Post e) {
 		LivingEntity livingEntity = e.getEntity();
-		MobEffectsEvent.onEntityDamage(livingEntity.level(), livingEntity, e.getSource(), e.getNewDamage());
+		MobEffectsEvent.onEntityDamage(livingEntity.level(), livingEntity, e.getSource(), e.getHealthDamage());
 	}
 }
