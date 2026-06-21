@@ -11,12 +11,12 @@ import net.minecraft.world.level.Level;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MobEffectsEvent {
-	public static void onEntityJoin(Level world, Entity entity) {
-		if (world.isClientSide()) {
+	public static void onEntityJoin(Level level, Entity entity) {
+		if (level.isClientSide()) {
 			return;
 		}
 		
-		if (!(entity instanceof LivingEntity)) {
+		if (!(entity instanceof LivingEntity livingEntity)) {
 			return;
 		}
 		
@@ -26,20 +26,19 @@ public class MobEffectsEvent {
 		}
 		
 		CopyOnWriteArrayList<MobEffectInstance> effectinstances = Util.mobpermanent.get(entitytype);
-		if (effectinstances.size() > 0) {
-			LivingEntity le = (LivingEntity)entity;
-			
+		if (!effectinstances.isEmpty()) {
+
 			for (MobEffectInstance effectinstance : effectinstances) {
 				MobEffectInstance ei = new MobEffectInstance(effectinstance);
 				
-				le.removeEffect(ei.getEffect());
-				le.addEffect(ei);
+				livingEntity.removeEffect(ei.getEffect());
+				livingEntity.addEffect(ei);
 			}
 		}
 	}
 	
-	public static void onEntityDamage(Level world, Entity entity, DamageSource damageSource, float damageAmount) {
-		if (world.isClientSide()) {
+	public static void onEntityDamage(Level level, Entity entity, DamageSource damageSource, float damageAmount) {
+		if (level.isClientSide()) {
 			return;
 		}
 		
@@ -53,15 +52,15 @@ public class MobEffectsEvent {
 			return;
 		}
 		
-		LivingEntity le = (LivingEntity)entity;
+		LivingEntity livingEntity = (LivingEntity)entity;
 		
 		CopyOnWriteArrayList<MobEffectInstance> effectinstances = Util.mobdamage.get(sourcetype);
-		if (effectinstances.size() > 0) {
+		if (!effectinstances.isEmpty()) {
 			for (MobEffectInstance effectinstance : effectinstances) {
 				MobEffectInstance ei = new MobEffectInstance(effectinstance);
 				
-				le.removeEffect(ei.getEffect());
-				le.addEffect(ei);
+				livingEntity.removeEffect(ei.getEffect());
+				livingEntity.addEffect(ei);
 			}
 		}		
 	}
