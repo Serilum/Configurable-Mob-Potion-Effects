@@ -1,8 +1,8 @@
-package com.natamus.configurablemobpotioneffects.cmd;
+package com.serilum.configurablemobpotioneffects.cmd;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.natamus.collective.functions.MessageFunctions;
-import com.natamus.configurablemobpotioneffects.util.Util;
+import com.serilum.configurablemobpotioneffects.util.Util;
 
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
