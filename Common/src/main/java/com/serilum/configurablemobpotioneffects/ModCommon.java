@@ -1,4 +1,4 @@
-package com.natamus.configurablemobpotioneffects;
+package com.serilum.configurablemobpotioneffects;
 
 
 public class ModCommon {

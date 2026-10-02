@@ -1,7 +1,7 @@
-package com.natamus.configurablemobpotioneffects.neoforge.events;
+package com.serilum.configurablemobpotioneffects.neoforge.events;
 
-import com.natamus.configurablemobpotioneffects.cmd.CommandCmpe;
-import com.natamus.configurablemobpotioneffects.events.MobEffectsEvent;
+import com.serilum.configurablemobpotioneffects.cmd.CommandCmpe;
+import com.serilum.configurablemobpotioneffects.events.MobEffectsEvent;
 import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;

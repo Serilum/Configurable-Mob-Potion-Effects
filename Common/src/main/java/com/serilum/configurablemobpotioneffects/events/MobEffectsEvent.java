@@ -1,6 +1,6 @@
-package com.natamus.configurablemobpotioneffects.events;
+package com.serilum.configurablemobpotioneffects.events;
 
-import com.natamus.configurablemobpotioneffects.util.Util;
+import com.serilum.configurablemobpotioneffects.util.Util;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;

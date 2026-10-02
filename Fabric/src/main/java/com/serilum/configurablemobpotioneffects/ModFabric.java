@@ -1,12 +1,12 @@
-package com.natamus.configurablemobpotioneffects;
+package com.serilum.configurablemobpotioneffects;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
 import com.natamus.collective.fabric.callbacks.CollectiveEntityEvents;
-import com.natamus.configurablemobpotioneffects.cmd.CommandCmpe;
-import com.natamus.configurablemobpotioneffects.events.MobEffectsEvent;
-import com.natamus.configurablemobpotioneffects.util.Reference;
-import com.natamus.configurablemobpotioneffects.util.Util;
+import com.serilum.configurablemobpotioneffects.cmd.CommandCmpe;
+import com.serilum.configurablemobpotioneffects.events.MobEffectsEvent;
+import com.serilum.configurablemobpotioneffects.util.Reference;
+import com.serilum.configurablemobpotioneffects.util.Util;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
@@ -40,8 +40,8 @@ public class ModFabric implements ModInitializer {
 		}
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-            CommandCmpe.register(dispatcher);
-        });
+			CommandCmpe.register(dispatcher);
+		});
 
 		ServerEntityEvents.ENTITY_LOAD.register((Entity entity, ServerLevel world) -> {
 			MobEffectsEvent.onEntityJoin(world, entity);
