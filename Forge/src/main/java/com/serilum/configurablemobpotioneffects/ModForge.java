@@ -1,10 +1,10 @@
-package com.natamus.configurablemobpotioneffects;
+package com.serilum.configurablemobpotioneffects;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
-import com.natamus.configurablemobpotioneffects.forge.events.ForgeMobEffectsEvent;
-import com.natamus.configurablemobpotioneffects.util.Reference;
-import com.natamus.configurablemobpotioneffects.util.Util;
+import com.serilum.configurablemobpotioneffects.forge.events.ForgeMobEffectsEvent;
+import com.serilum.configurablemobpotioneffects.util.Reference;
+import com.serilum.configurablemobpotioneffects.util.Util;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
@@ -35,7 +35,7 @@ public class ModForge {
 			return;
 		}
 
-    	ForgeMobEffectsEvent.registerEventsInBus();
+		ForgeMobEffectsEvent.registerEventsInBus();
 	}
 
 	private static void setGlobalConstants() {

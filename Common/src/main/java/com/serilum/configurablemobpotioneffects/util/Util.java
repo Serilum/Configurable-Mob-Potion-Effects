@@ -1,4 +1,4 @@
-package com.natamus.configurablemobpotioneffects.util;
+package com.serilum.configurablemobpotioneffects.util;
 
 import com.natamus.collective.functions.DataFunctions;
 import com.natamus.collective.functions.NumberFunctions;

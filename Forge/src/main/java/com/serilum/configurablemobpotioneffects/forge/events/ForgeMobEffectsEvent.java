@@ -1,7 +1,7 @@
-package com.natamus.configurablemobpotioneffects.forge.events;
+package com.serilum.configurablemobpotioneffects.forge.events;
 
-import com.natamus.configurablemobpotioneffects.cmd.CommandCmpe;
-import com.natamus.configurablemobpotioneffects.events.MobEffectsEvent;
+import com.serilum.configurablemobpotioneffects.cmd.CommandCmpe;
+import com.serilum.configurablemobpotioneffects.events.MobEffectsEvent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
@@ -16,10 +16,10 @@ public class ForgeMobEffectsEvent {
 		BusGroup.DEFAULT.register(MethodHandles.lookup(), ForgeMobEffectsEvent.class);
 	}
 
-    @SubscribeEvent
-    public static void registerCommands(RegisterCommandsEvent e) {
-    	CommandCmpe.register(e.getDispatcher());
-    }
+	@SubscribeEvent
+	public static void registerCommands(RegisterCommandsEvent e) {
+		CommandCmpe.register(e.getDispatcher());
+	}
 
 	@SubscribeEvent
 	public static void onEntityJoin(EntityJoinLevelEvent e) {
