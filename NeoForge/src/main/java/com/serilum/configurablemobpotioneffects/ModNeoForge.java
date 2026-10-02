@@ -1,10 +1,10 @@
-package com.natamus.configurablemobpotioneffects;
+package com.serilum.configurablemobpotioneffects;
 
 import com.natamus.collective.check.RegisterMod;
 import com.natamus.collective.check.ShouldLoadCheck;
-import com.natamus.configurablemobpotioneffects.neoforge.events.NeoForgeMobEffectsEvent;
-import com.natamus.configurablemobpotioneffects.util.Reference;
-import com.natamus.configurablemobpotioneffects.util.Util;
+import com.serilum.configurablemobpotioneffects.neoforge.events.NeoForgeMobEffectsEvent;
+import com.serilum.configurablemobpotioneffects.util.Reference;
+import com.serilum.configurablemobpotioneffects.util.Util;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
